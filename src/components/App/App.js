@@ -1,6 +1,6 @@
 //import logo from '../../logo.svg';
 import React from 'react';
-import { Route, Switch, Redirect, withRouter, useHistory } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 

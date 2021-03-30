@@ -1,7 +1,5 @@
 import React from 'react';
 import Like from "../../../images/like.svg"
-import Delete from "../../../images/delete.svg"
-
 
 function MoviesCard(props) {
 
