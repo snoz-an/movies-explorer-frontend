@@ -1,0 +1,13 @@
+.movies__button-more {
+    width: 100%;
+    text-align: center;
+    height: 36px;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.movies__button-more-container {
+    padding: 50px 70px 80px;
+}

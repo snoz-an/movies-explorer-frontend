@@ -1,0 +1,13 @@
+.movie_saved {
+    cursor: pointer;
+}
+
+
+.movie__delete {
+    display: none;
+}
+
+
+.movie:hover .movie__delete {
+    display: block;
+}

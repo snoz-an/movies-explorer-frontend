@@ -1,0 +1,117 @@
+.about-me {
+    padding: 110px 70px 100px;
+}
+
+.about__me {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 66px;
+}
+
+.about__me-text {
+    max-width: 600px;
+}
+
+.about__name {
+    font-size: 50px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.about__activity {
+    margin: 18px 0 26px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.about__life {
+    margin: 0 0 69px;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.about__social-media {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.about__social-media-item {
+    font-size: 14px;
+    margin-right: 20px;
+    font-weight: 500;
+    line-height: 16.94px;
+    text-decoration: none;
+    color: black;
+}
+
+.about__me-photo {
+    width: 279px;
+    height: 327px;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .about-me {
+        padding: 90px 50px 90px;
+    }
+
+    .about__me-photo {
+        width: 255px;
+        height: 307px;
+        margin: 0;
+    }
+
+    .about__name {
+        font-size: 40px;
+    }
+
+    .about__activity {
+        font-size: 12px;
+        line-height: 18px;
+        margin: 16px 0 20px;
+    }
+
+    .about__life {
+        margin: 0 0 70px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .about__me-photo {
+        order: -1;
+        height: 352px;
+        margin-bottom: 40px;
+    }
+
+    .about__me {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+
+    .about-me {
+        padding: 70px 14px 69px;
+    }
+
+    .about__me-text {
+       width: 100%;
+    }
+
+    .about__life {
+        font-size: 11px;
+        line-height: 16px;
+        margin-bottom: 40px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .about__me-photo {
+        width: 100%;
+    }
+}    

@@ -1,0 +1,56 @@
+.profile {
+    padding: 74px 0 70px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+}
+
+.profile__greeting {
+    margin: 0 auto 123px;
+}
+
+.profile__input-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 34px;
+}
+
+.profile__input {
+    border: none;
+    outline: none;
+    text-align: end;
+    margin: 0;
+    font-weight: 400;
+    line-height: 13px;
+    font-size: 11px;
+}
+
+.profile__input-name {
+    font-weight: 500;
+    line-height: 13px;
+    font-size: 11px;
+    margin: 0;
+}
+
+.profile__button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-style: normal;
+}
+
+.profile__sumbit-button {
+    margin-top: 220px;
+    font-weight: 400;
+    line-height: 16px;
+    font-size: 13px;
+}
+
+.profile__exit-button {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #EE3465;
+    margin-top: 16px;
+}
