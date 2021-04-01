@@ -30,10 +30,23 @@
     cursor: pointer;
     padding: 0;
     outline: none;
+    background-image: url(../../../images/like.svg);
+    transition: 1s linear;
 }
+
+.like:hover {
+    opacity: .7;
+}
+
+
+.like:focus {
+    background-image: url(../../../images/like-desibled.svg)
+}
+
 
 .movie__time {
     font-size: 11px;
     color: #A0A0A0;
     margin-bottom: 16px;
 }
+

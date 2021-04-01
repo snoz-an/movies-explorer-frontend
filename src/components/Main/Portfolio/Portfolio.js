@@ -12,19 +12,19 @@ function Portfolio() {
                 <li class="portfolio__link-item">
                     <p class="portfolio__link">Статичный сайт</p>
                     <a href="https://snoz-an.github.io/how-to-learn/index.html" class="portfolio__link" target="blank">
-                        <img src={Link} alt="ссылка"/>
+                        <img className="portfolio__link-hover" src={Link} alt="ссылка"/>
                     </a>
                 </li>
                 <li class="portfolio__link-item">
                     <p class="portfolio__link">Адаптивный сайт</p>
                     <a href="https://snoz-an.github.io/russian-travel/" class="portfolio__link" target="blank">
-                        <img src={Link} alt="ссылка"/>
+                        <img className="portfolio__link-hover" src={Link} alt="ссылка"/>
                     </a>
                 </li>
                 <li class="portfolio__link-item">
                     <p class="portfolio__link">Одностраничное приложение</p>
                     <a href="https://snozz.students.nomoreparties.space" class="portfolio__link" target="blank">
-                        <img src={Link} alt="ссылка"/>
+                        <img className="portfolio__link-hover" src={Link} alt="ссылка"/>
                     </a>
                 </li>
                 

@@ -17,7 +17,14 @@
     background-color: white;
     cursor: pointer;
     margin-right: 30px;
+    transition: .5s linear;
 }
+
+.burger__icon:hover {
+    opacity: .4;
+}
+
+
 
 .burger__nav {
     display: none;
@@ -36,6 +43,11 @@
     line-height: 18px;
     text-decoration: none;
     color: black;
+    transition: 1s linear;
+}
+
+.burger__nav-item:hover {
+    opacity: .5;
 }
 
 .burger__nav-item-underline {
@@ -53,6 +65,11 @@
     top: 22px;
     right: 22px;
     cursor: pointer;
+    transition: 1s linear;
+}
+
+.burger__exit-button:hover{
+    opacity: .5;
 }
     
     
@@ -69,6 +86,11 @@
         width: 100px;
         text-decoration: none;
         color: black;
+        transition: 1s linear;
+    }
+
+    .burger__nav-account:hover {
+        opacity: .5;
     }
 
     .burger__nav-item {

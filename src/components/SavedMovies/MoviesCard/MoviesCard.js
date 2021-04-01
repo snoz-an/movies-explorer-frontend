@@ -10,7 +10,7 @@ function MoviesCard(props) {
             <img src = {props.poster} alt="постер" className="movie__img" />
             <div className="movie__name-container">
                 <h3 className="movie__name">{props.name}</h3>
-                <button type="button" className="like" >
+                <button type="button" className="movie__delete" >
                     <img src={Delete} alt="удалить" className="movie__delete"/>
                 </button>
     

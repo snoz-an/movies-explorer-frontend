@@ -6,8 +6,8 @@ function SearchForm () {
     return(
         <>
             <section className="search-form">   
-                <div className="search-form__container">
-                    <input type="text" name="search" placeholder="Фильм" className="search-form__input"></input>
+                <div className="search-form__container" tabindex="0">
+                    <input type="text" required name="search" placeholder="Фильм" className="search-form__input"></input>
                     <button type="button" className="search-form__button">Найти</button>
                 </div>
                 <div className="search-form__short-film">

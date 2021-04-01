@@ -38,6 +38,11 @@
     outline: none;
     cursor: pointer;
     font-style: normal;
+    transition: 1s linear;
+}
+
+.profile__button:hover {
+    opacity: .5;
 }
 
 .profile__sumbit-button {

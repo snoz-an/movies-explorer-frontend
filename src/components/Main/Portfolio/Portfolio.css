@@ -29,6 +29,14 @@
     margin: 0;
 }
 
+.portfolio__link-hover {
+    transition: 1s linear;
+}
+
+.portfolio__link-hover:hover {
+    opacity: .5;
+}
+
 @media screen and (max-width: 768px) {
     .portfolio {
         padding: 0 50px 90px;
