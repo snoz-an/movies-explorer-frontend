@@ -18,6 +18,9 @@ function MoviesCard(props) {
     )
     }
 
+
+
+    
     export default MoviesCard
 
     

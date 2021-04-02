@@ -60,10 +60,10 @@
 }
 
 .about__backend {
-    color: #A0A0A0;
     max-width: 248px;
     text-align: center;
     margin: 14px 0 14px;
+    color: #A0A0A0;
 }
 
 .about__frontend {
