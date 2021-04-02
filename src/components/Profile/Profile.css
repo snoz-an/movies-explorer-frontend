@@ -39,6 +39,7 @@
     cursor: pointer;
     font-style: normal;
     transition: 1s linear;
+    background: white;
 }
 
 .profile__button:hover {
@@ -58,4 +59,15 @@
     line-height: 16px;
     color: #EE3465;
     margin-top: 16px;
+}
+
+
+@media screen and (max-width: 500px) {
+
+.profile__greeting {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    text-align: center;
+}
 }

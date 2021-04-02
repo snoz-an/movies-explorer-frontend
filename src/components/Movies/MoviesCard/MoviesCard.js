@@ -1,4 +1,6 @@
 import React from 'react';
+import Like from '../../../images/like.svg'
+import disLike from '../../../images/like-desibled.svg'
 
 function MoviesCard(props) {
     
@@ -8,7 +10,7 @@ function MoviesCard(props) {
             <div className="movie__name-container">
                 <h3 className="movie__name">{props.name}</h3>
                 <button type="button" className="like" >
-                    <div alt="лайк" tabindex="0" className="movie__like"/>
+                    <img src={props.isFavorite? Like: disLike} className="like__img"/>
                 </button>
             </div>
             <span className="movie__time">{props.duration}</span>

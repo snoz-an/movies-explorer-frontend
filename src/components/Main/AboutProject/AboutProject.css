@@ -45,7 +45,7 @@
 }
 
 .about__time_backend {
-    max-width: 228px;
+    width: 209px;
     text-align: center;
     background-color: #2BE080;
     padding: 9px;
@@ -53,11 +53,10 @@
 }
 
 .about__time_frontend {
-    max-width: 140px;
     text-align: center;
-    background-color: none;
     padding: 9px;
     margin: 0;
+    background: #F2F2F2;
 }
 
 .about__backend {
@@ -69,8 +68,8 @@
 
 .about__frontend {
     color: #A0A0A0;
-    padding-left: 9px;
     margin-top: 14px;
+    text-align: center;
 }
 
 .about__time-container {
@@ -85,7 +84,8 @@
 }
 
 .about__time-container-item:last-of-type {
-    margin-right: 31%;
+    /*margin-right: 31%;*/
+    width: 912px;
 }
 
 
@@ -103,7 +103,7 @@
     }
 
     .about__time_backend {
-        max-width: 140px;
+        width: 120px;
         padding: 9px;
         border: 1px solid #000000;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -137,10 +137,14 @@
     }
 
     .about__time-container {
-        padding-top: 4px;
+        padding-top: 4px;        
+        font-size: 11px;
+        line-height: 13px;
+        font-weight: 400;
     }
 
     .about__time_backend {
+        width: 82px;
         border: none;
         filter: none;
     }
