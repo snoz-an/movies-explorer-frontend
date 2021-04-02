@@ -10,7 +10,7 @@ function MoviesCard(props) {
             <div className="movie__name-container">
                 <h3 className="movie__name">{props.name}</h3>
                 <button type="button" className="like" >
-                    <img src={props.isFavorite? Like: disLike} className="like__img"/>
+                    <img src={props.isFavorite? Like: disLike} className="like__img" alt="лайк"/>
                 </button>
             </div>
             <span className="movie__time">{props.duration}</span>
