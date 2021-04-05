@@ -1,0 +1,151 @@
+.about {
+    padding: 110px 70px;
+}
+
+.about__title {
+    color: black;
+    font-size: 22px;
+    font-weight: 400;
+    border-bottom: 1px solid black;
+    padding-bottom: 23px;
+    margin: 0;
+    line-height: 27px;
+    letter-spacing: -0.04em;
+}
+
+.about__project {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+.about__brief {
+    margin: 0 0 26px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.2px;
+    letter-spacing: -0.04em;
+}
+
+.about__main-text {
+    max-width: 550px;
+    margin-right: 30px;
+}
+
+.about__main-text:last-of-type {
+    margin: 0;
+}
+
+.about__paragraph {
+    font-size: 14px;
+    margin-right: 40px;
+    font-weight: 400;
+    line-height: 18px;
+
+}
+
+.about__time_backend {
+    width: 209px;
+    text-align: center;
+    background-color: #2BE080;
+    padding: 9px;
+    margin: 0;
+}
+
+.about__time_frontend {
+    text-align: center;
+    padding: 9px;
+    margin: 0;
+    background: #F2F2F2;
+}
+
+.about__backend {
+    max-width: 248px;
+    text-align: center;
+    margin: 14px 0 14px;
+    color: #A0A0A0;
+}
+
+.about__frontend {
+    color: #A0A0A0;
+    margin-top: 14px;
+    text-align: center;
+}
+
+.about__time-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 93px;
+}
+
+.about__time-container-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.about__time-container-item:last-of-type {
+    /*margin-right: 31%;*/
+    width: 912px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .about {
+        padding: 90px 50px 90px;
+    }
+
+    .about__paragraph {
+        font-size: 12px;
+    }
+
+    .about__main-text {
+        max-width: 319px;
+    }
+
+    .about__time_backend {
+        width: 120px;
+        padding: 9px;
+        border: 1px solid #000000;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    .about__backend {
+        max-width: 165px;
+    }
+    
+
+}
+
+@media screen and (max-width: 500px) {
+    .about {
+        padding: 70px 18px 70px;
+    }
+
+    .about__project {
+        flex-direction: column;
+    }
+
+    .about__brief {
+        margin: 0 0 16px;
+        font-size: 18px;
+    }
+
+    .about__paragraph {
+        font-size: 11px;
+        margin: 0 0 56px;
+        line-height: 16px;
+    }
+
+    .about__time-container {
+        padding-top: 4px;        
+        font-size: 11px;
+        line-height: 13px;
+        font-weight: 400;
+    }
+
+    .about__time_backend {
+        width: 82px;
+        border: none;
+        filter: none;
+    }
+}

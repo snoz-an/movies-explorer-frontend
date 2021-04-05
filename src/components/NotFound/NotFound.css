@@ -1,0 +1,49 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.error__number {
+    font-size: 140px;   
+    line-height: 169px;
+    letter-spacing: 0em;
+    font-weight: 400;
+    margin: 408px 0 5px;
+}
+
+.eroor__text {
+    font-weight: 400;
+    line-height: 19px;
+    font-size: 16px;
+    margin: 0 0 184px;
+}
+
+.error__back {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    color: #FF6838;   
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 320px){
+    .error__number {
+        font-size: 80px;
+        line-height: 97px;
+        margin: 329px 0 10px;
+    }
+
+    .eroor__text {       
+        font-size: 12px;
+        line-height: 15px;
+        margin: 0 0 284px;
+    }
+
+    .error__back {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    
+}

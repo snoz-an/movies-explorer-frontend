@@ -1,0 +1,48 @@
+.movie {
+    max-width: 364px;
+    padding-bottom: 16px;
+}
+
+.movie__img {
+    width: 100%;
+    
+    border-top: 10px;
+}
+
+.movie__name-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0 17px;
+}
+
+.movie__name {
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.like {
+    margin: 0 24px 0 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    transition: 1s linear;
+}
+
+.like__img {
+    width: 14px;
+    height: 12px;
+}
+
+.like:hover {
+    opacity: .7;
+}
+
+.movie__time {
+    font-size: 11px;
+    color: #A0A0A0;
+    margin-bottom: 16px;
+}
+
