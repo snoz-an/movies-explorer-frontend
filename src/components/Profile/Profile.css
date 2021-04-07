@@ -33,6 +33,11 @@
     margin: 0;
 }
 
+.profile__input-label {
+    display: flex;
+    flex-direction: column;
+}
+
 .profile__button {
     border: none;
     outline: none;
@@ -41,6 +46,17 @@
     transition: 1s linear;
     background: white;
 }
+
+.profile__input-error {
+    color: red;
+    font-size: 11px;
+    text-align: end;
+}
+
+.profile__input-error_login {
+    text-align: start;
+}
+
 
 .profile__button:hover {
     opacity: .5;
