@@ -11,10 +11,9 @@ export class Api {
     }
   
   
-    getInitialCards(token) {
-      return fetch(`${this._url}/cards`, {
+    getInitialCards() {
+      return fetch(`${this._url}/beatfilm-movies`, {
         headers: {
-          "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       })
@@ -47,7 +46,7 @@ export class Api {
         },
         body: JSON.stringify({
           name: data.name,
-          email: data.email
+          about: data.about
         }),
       })
         .then(res => {
@@ -120,9 +119,9 @@ export class Api {
   }
   
   
-   const api = new Api({
-    baseUrl: 'https://www.api.snozmovie.students.nomoredomains.monster',
+   const MoviesApi = new Api({
+    baseUrl: 'https://api.nomoreparties.co',
   }
   )
   
-  export default api
+  export default MoviesApi

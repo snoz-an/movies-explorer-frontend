@@ -15,21 +15,25 @@ import NotFound from '../NotFound/NotFound';
 import CurrentUserContext from  '../../contexts/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute';
 import api from '../../utils/api';
+import MoviesApi from '../../utils/MoviesApi';
+
 import * as auth from '../../utils/auth';
 
-function App() {
+function App(props) {
 
   const history = useHistory();
 
   const [currentUser, setCurrentUser ] = React.useState({})
   const [loggedIn, setLoggedIn] = React.useState(false);
+  
   const [userData, setUserData] = React.useState({
     name:'',
     email: '',
     password: ''
   });
-  const [cards, setCards] = React.useState([])
+  const [movies, setMovies] = React.useState([])
   const [message, setMessage] = React.useState('')
+
 
   const tokenCheck = () => {
     if (localStorage.getItem('jwt')) {
@@ -52,7 +56,7 @@ function App() {
   React.useEffect(() => {
     tokenCheck();
   }, [loggedIn]);
- 
+
 
   const handleRegister = (data) => {
     const {name, email, password} = data;
@@ -112,6 +116,27 @@ function App() {
       })
   }
 
+  
+
+  function searchMovie(evt){
+    evt.preventDefault()
+    console.log(evt.target[0].value)
+    MoviesApi.getInitialCards()
+    .then(res=>{
+    console.log(res)
+    localStorage.setItem(res, JSON.stringify(res));
+    const films = res.filter((movie)=>{
+    return movie.nameRU.toLowerCase().includes(evt.target[0].value.toLowerCase())
+    })
+    
+    setMovies(films)
+    })
+    
+    }
+
+
+
+  
   return (
     <>
     <CurrentUserContext.Provider value={currentUser}>
@@ -127,7 +152,11 @@ function App() {
           {loggedIn ? <Redirect to="/movies"/> : <Redirect to="/"/>}
       </Route> */}
    
-    <ProtectedRoute exact path="/movies" loggedIn={loggedIn} component= { Movies }  />
+    {/* <ProtectedRoute exact path="/movies" loggedIn={loggedIn} component= { Movies }  movies={movies} onSubmit={handleSubmit} onHandleInputChange = {handleInputChange}/> */}
+    <ProtectedRoute exact path="/movies" loggedIn={loggedIn} component= { Movies } movies={movies} onSubmit={searchMovie}
+              
+              />
+
     <ProtectedRoute exact path="/saved-movies" loggedIn={loggedIn} component= { SavedMovies }  />
     <ProtectedRoute exact path="/profile" userData={userData} loggedIn={loggedIn} component={ Profile } onSignOut={handleSignOut} onUpdateUser={handleUpdateUser}/>
 

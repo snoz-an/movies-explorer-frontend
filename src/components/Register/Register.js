@@ -7,32 +7,6 @@ import {useFormWithValidation} from '../Validation'
 
 function Register({onRegister, message}) {
     
-//   const [data, setData] = useState({
-//     name: '',
-//     email: '',
-//     password: '',
-//   })
-
-// const handleChange = (e) => {
-//   const {name, value} = e.target;
-//   setData({
-//     ...data,
-//     [name]: value,
-//   });
-// }
-
-// const handleSubmit = (e) => {
-//   e.preventDefault();
-//   if (data.name, data.email, data.password) {
-//     onRegister(data)
-//   }
-// }
-
-
-
-
-
-
 const {
   values,
   handleChange, 
@@ -79,15 +53,15 @@ return(
       <img src={logo} alt="логотип" className="header__logo header__logo_register"/>
       <h2 className="register__header">Добро пожаловать!</h2>
       <p className="register__input-name">Имя</p>
-      <input className="register__input" id="name" placeholder="Имя" name="name" type="text"  value={values.name} onChange={handleChange}/>  
+      <input className="register__input" required id="name" placeholder="Имя" name="name" type="text"  value={values.name} onChange={handleChange}/>  
       <span className="profile__input-error profile__input-error_login">{errors.name || ''}</span>
 
 
       <p className="register__input-name">E-mail</p>
-      <input className="register__input" id="email" placeholder="Email" name="email" type="email" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" value={values.email} onChange={handleChange}/>  
+      <input className="register__input" id="email" required placeholder="Email" name="email" type="email" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" value={values.email} onChange={handleChange}/>  
       <span className="profile__input-error profile__input-error_login">{errors.email || ''}</span>
       <p className="register__input-name">Пароль</p>  
-      <input className="register__input" id="password" placeholder="Пароль" name="password" type="password" value={values.password} onChange={handleChange}/>
+      <input className="register__input" id="password" required placeholder="Пароль" name="password" type="password" value={values.password} onChange={handleChange}/>
 
       <span className="profile__input-error profile__input-error_login">{errors.password || ''}</span>
       <span className="profile__input-error profile__input-error_login">{errors.message}</span> 
