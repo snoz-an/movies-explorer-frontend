@@ -31,6 +31,9 @@
     background: #F9F9F9;
 }
 
+.search-form__input:focus ~  .search-form__button {
+    opacity: 1;
+}
 
 .search-form__input::placeholder {
     color: #A0A0A0;
@@ -46,6 +49,7 @@
     padding: 8px 8px;
     text-align: center;
     background-color: #FF6838;
+    opacity: .5;
     border: none;
     outline: none;
     border-radius: 48px;
@@ -54,6 +58,7 @@
     transition: opacity linear .2s;
     margin-left: 5px;
     width: 58.65px;
+    
 }
 
 .search-form__button:hover {

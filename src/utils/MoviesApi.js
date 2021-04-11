@@ -10,7 +10,6 @@ export class Api {
       return Promise.reject(new Error(`Ошибка: ${res.status}`));
     }
   
-  
     getInitialCards() {
       return fetch(`${this._url}/beatfilm-movies`, {
         headers: {

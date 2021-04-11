@@ -11,12 +11,25 @@ export class Api {
     }
   
   
-    getInitialCards(token) {
-      return fetch(`${this._url}/cards`, {
+    getSavedMovies(token) {
+      return fetch(`${this._url}/movies`, {
         headers: {
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json",
         },
+      })
+        .then(res => {
+          return this._parseResult(res)
+        })
+    }
+
+    postSavedMovies(movie) {
+      return fetch(`${this._url}/movies`, {
+        headers: {
+          "Authorization": `Bearer ${this._token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(movie),
       })
         .then(res => {
           return this._parseResult(res)
@@ -73,24 +86,7 @@ export class Api {
     }
   
   
-    newAvatar(data, token) {
-      return fetch(`${this._url}/users/me/avatar`, {
-        method: 'PATCH',
-        headers: {
-          "Authorization": `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          avatar: data.avatar
-        }
-        )
-      })
-        .then(res => {
-          return this._parseResult(res)
-        })
-  
-    }
-  
+   
     deleteCard(id, token) {
       return fetch(`${this._url}/cards/${id}`, {
         method: 'DELETE',
@@ -104,19 +100,6 @@ export class Api {
         })
     }
   
-  
-     likeCard(cardDataId, isLiked, token) {
-      return fetch(`${this._url}/cards/${cardDataId}/likes`, {
-        method: (isLiked ? "PUT" : "DELETE"),
-        headers: {
-          "Authorization": `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      })
-        .then(res => {
-          return this._parseResult(res)
-        })
-    } 
   }
   
   

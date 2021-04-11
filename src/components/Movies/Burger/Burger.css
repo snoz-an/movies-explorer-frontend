@@ -128,7 +128,7 @@
     }
 
     .burger__nav-item {
-        margin: 0 0 24px;
+        margin: 0 auto 24px;
         font-size: 18px;
         line-height: 22px;
         font-weight: 500;

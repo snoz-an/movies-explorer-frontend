@@ -6,6 +6,10 @@ function MoviesCard(props) {
 
     const cardData = props.cardData;
 
+    function handleLikeClick() {
+        props.onCardLike(cardData);
+    } 
+
     
     return(
         <li className="movie">
@@ -19,7 +23,11 @@ function MoviesCard(props) {
             <div className="movie__name-container">
                 <h3 className="movie__name">{cardData.nameRU}</h3>
                 <button type="button" className="like" >
-                    <img src={props.isFavorite? Like: disLike} className="like__img" alt="лайк"/>
+                    <img src={props.isFavorite? Like: disLike}  className="like__img" alt="лайк" onClick={handleLikeClick}/>
+
+                    {/* <img src={ !isSaved ? evt => saveMovie(evt) : evt => deleteMovie(evt)}  className="like__img" alt="лайк" onClick={handleLikeClick}/> */}
+
+                    
                 </button>
             </div>
             <span className="movie__time">{cardData.duration} min</span>
