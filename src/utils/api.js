@@ -11,11 +11,10 @@ export class Api {
     }
   
   
-    getSavedMovies(token) {
+    getSavedMovies() {
       return fetch(`${this._url}/movies`, {
         headers: {
-          "Authorization": `Bearer ${token}`,
-          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem('jwt')}`,      
         },
       })
         .then(res => {
@@ -24,9 +23,11 @@ export class Api {
     }
 
     postSavedMovies(movie) {
+
       return fetch(`${this._url}/movies`, {
+        method: 'POST',
         headers: {
-          "Authorization": `Bearer ${this._token}`,
+          authorization: `Bearer ${localStorage.getItem('jwt')}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(movie),
@@ -87,11 +88,11 @@ export class Api {
   
   
    
-    deleteCard(id, token) {
-      return fetch(`${this._url}/cards/${id}`, {
+    deleteMovie(id) {
+      return fetch(`${this._url}/movies/${id}`, {
         method: 'DELETE',
         headers: {
-          "Authorization": `Bearer ${token}`,
+          authorization: `Bearer ${localStorage.getItem('jwt')}`,
           "Content-Type": "application/json",
         },
       })

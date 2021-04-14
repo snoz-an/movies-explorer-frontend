@@ -27,6 +27,7 @@ function handleMoreBtnClick() {
    setSearchedMovies(searchedMovies+moreMoviesCards)
 }
          
+
         
 
     return(
@@ -36,7 +37,10 @@ function handleMoreBtnClick() {
             {props.movies
              .slice(0, searchedMovies)
             .map((movie)=> (
-                <MoviesCard key={movie.id} cardData={movie} onCardLike={props.onCardLike}/>
+                <MoviesCard key={movie.id} cardData={movie} onCardLike={props.onCardLike} savedMovies={props.savedMovies} handleSaveMovie={props.handleSaveMovie}
+                setMyFilms={props.setMyFilms} myFilms={props.myFilms} 
+                liked={props.liked} setLiked={props.setLiked}
+                />
                )
                )}
         </ul>
@@ -44,7 +48,7 @@ function handleMoreBtnClick() {
         {props.movies.length <= 12 || searchedMovies >= props.movies.length ?
         <></>
         :
-        <button type="button" className="movies__button-more" onClick={handleMoreBtnClick} >Ещё</button>
+        <button type="button" className="movies__button-more" onClick={handleMoreBtnClick}>Ещё</button>
 }
         </div>
     </>
