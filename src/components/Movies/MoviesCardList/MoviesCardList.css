@@ -9,12 +9,31 @@
     grid-column-gap: 24px;
 }
 
+.nothing-found {
+    font-size: 60px;
+    color: #FF6838;
+}
+
+.nothing-found__container {
+    display: flex;
+    justify-content: center;
+}
+
+.movies__button-more_hidden {
+display: none;
+}
+
+
 @media screen and (max-width: 768px){
 
     .movies-list {
         grid-template-columns: repeat(2,1fr);
         padding: 70px 30px 10px;
 
+    }
+
+    .nothing-found {
+        font-size: 30px;
     }
 }
 

@@ -8,16 +8,14 @@ import { useHistory } from 'react-router-dom';
 function Header(props) {
     const history = useHistory()
 
-    const { loggedIn } = props;
-
+if (props.loggedIn) {
 
     return (
-        <header className="header">
+       
         
-          {loggedIn
-            ? (
-              <>
-              <div className="header header__loggedin">
+        <header className="header">
+
+              <div className="header__loggedin">
                     <div className="header__loggedin-container">   
                         <img src={logo} alt="логотип" className="header__logo"/>
                        
@@ -41,10 +39,14 @@ function Header(props) {
 
                 </div>
 
-                </>
+                </header>
+                
             )
-            : (
-                <>
+            } 
+            
+            return (
+                
+                <header className="header">
                 <div className="header__loggedout">
                 <img src={logo} alt="логотип" className="header__logo"/>
                 <ul className="header__button-container">
@@ -56,20 +58,13 @@ function Header(props) {
                 </button></li>
             </ul>
             </div>
-        </>
-            )}
-    
-        </header>
+            </header>
+         
         
-      );
+            )
     }
   
-   
-
 
 export default Header
-
-
-
 
 

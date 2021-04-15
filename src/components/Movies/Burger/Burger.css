@@ -87,6 +87,8 @@
         text-decoration: none;
         color: black;
         transition: 1s linear;
+        border: none;
+        cursor: pointer;
     }
 
     .burger__nav-account:hover {
@@ -96,8 +98,10 @@
     .burger__nav-item {
         height: 30px;
         display: block;
-        margin: 0  0 28px;
         text-align: center;
+        margin: 0 auto 28px;
+        border: none;
+        cursor: pointer;
     } 
 
     .burger__nav {
@@ -124,7 +128,7 @@
     }
 
     .burger__nav-item {
-        margin: 0 0 24px;
+        margin: 0 auto 24px;
         font-size: 18px;
         line-height: 22px;
         font-weight: 500;

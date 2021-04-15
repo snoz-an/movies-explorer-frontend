@@ -11,6 +11,10 @@
     border-radius: 6px;
 }
 
+.movies__button-more_none {
+    display: none;
+}
+
 .movies__button-more:hover {
     opacity: .5;
 }
