@@ -4,9 +4,7 @@ import disLike from '../../../images/like-desibled.svg'
 import api from '../../../utils/api';
 
 function MoviesCard(props) {
-    const [isCardLikeClicked, setIsCardLikeClicked] = React.useState(false);
-    // const [liked, setLiked] = React.useState(true)
-
+  const [isCardLikeClicked, setIsCardLikeClicked] = React.useState(false);
   const cardData = props.cardData;
   const handleSaveMovie = props.handleSaveMovie
 
@@ -23,13 +21,6 @@ function MoviesCard(props) {
     setLikes();
   }, [setLikes]);
 
-
-
-// function handleDeleteMovie() {
-//     setIsCardLikeClicked(false)
-//     api
-//     .deleteMovie(cardData._id)
-// }
 
     
     function handleLikeClick() {
@@ -58,14 +49,11 @@ function MoviesCard(props) {
         }
           else {
             const savedCard = props.savedMovies.find((movie) => movie.movieId === cardData.id);
-            // props.handleDeleteMovie(savedCard);
             setIsCardLikeClicked(false);
                 api
                   .deleteMovie(savedCard._id)
                   .then(() => { 
                     console.log(savedCard._id)
-                    // props.setMyFilms(!props.myFilms)
-                    // props.setIsLiked(false)
                   })
                   .catch((err) => {
                     console.log(err);
@@ -88,11 +76,7 @@ function MoviesCard(props) {
             <div className="movie__name-container">
                 <h3 className="movie__name">{cardData.nameRU}</h3>
                 <button type="button" className="like" >
-                    <img src={isCardLikeClicked ? Like: disLike}  className="like__img" alt="лайк" onClick={handleLikeClick} handleSaveMovie={props.handleSaveMovie} 
-                    handleDeleteMovie={props.handleDeleteMovie}/>
-
-                    {/* <img src={ !isSaved ? evt => saveMovie(evt) : evt => deleteMovie(evt)}  className="like__img" alt="лайк" onClick={handleLikeClick}/> */}
-
+                    <img src={isCardLikeClicked ? Like: disLike}  className="like__img" alt="лайк" onClick={handleLikeClick}/>
                     
                 </button>
             </div>

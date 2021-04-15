@@ -10,7 +10,7 @@ function SavedMovies(props) {
     const [movies, setMovies] = React.useState([])
     const [shortMovies, setShortMovies] = React.useState(false)
     const [myFilms, setMyFilms] = React.useState(false)
-    const [validFilms, setValidFilms] = React.useState([])
+    
     React.useEffect(()=>{
         api.getSavedMovies()
             .then(res=>{
@@ -35,8 +35,8 @@ function SavedMovies(props) {
                 }
                 message={props.message} windowWidth={props.windowWidth}
                 setMyFilms={setMyFilms} myFilms={myFilms}
-                handleDeleteMovie={props.handleDeleteMovie}
                 setSavedMovies={props.setSavedMovies}
+                
                 />
                 <div className="movies__button-more-container">
                     <button type="button" className="movies__button-more_none">Ещё</button>

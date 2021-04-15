@@ -20,7 +20,6 @@ function MoviesCard(props) {
         })
         setLiked(savedId.includes(`${cardData.id}`))
         setBackId(savedBackId)
-        console.log(savedBackId)
             })
     }, [cardData])
 

@@ -1,7 +1,5 @@
-//import logo from '../../logo.svg';
 import React from 'react';
-import { Route, Switch, Redirect, withRoute, useHistory } from 'react-router-dom';
-import Header from '../Header/Header';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import Main from '../Main/Main';
 
 import Movies from '../Movies/Movies';
@@ -35,35 +33,29 @@ function App(props) {
   });
   const [movies, setMovies] = React.useState([])
   const [message, setMessage] = React.useState('')
-  const [filtredMovies, setFiltredMovies] = React.useState([])
-  const [localMovies, setLocalMovies] = React.useState([])
   const [permissionsCheck, setPermissonCheck] = React.useState(false);
   const [savedMovies, setSavedMovies] = React.useState([]);
-  const [shortMovies, setShortMovies] = React.useState(false)
-
 
   React.useEffect(() => {
     const token = localStorage.getItem('jwt');
     tokenCheck(token);
-    setMovies([])
     const mov = JSON.parse(localStorage.getItem("movies"))
     if (mov) {
       setMovies(mov)
     } else {
       setMovies([])
     }
-    // setMovies(mov)
+
     Promise.all([
       api.getSavedMovies(), api.getUserProfile(token)
     ])
       .then(([сardData, res]) => {
         setSavedMovies(сardData);
-        console.log(savedMovies)
+        setMovies(JSON.parse(localStorage.getItem("movies")))
 
         if (res) {
           setCurrentUser({ name: res.name, email: res.email });
           setLoggedIn(true);
-          // history.push('/movies');
         }
       })
       .catch((err) => {
@@ -82,8 +74,7 @@ function App(props) {
 
 
   function tokenCheck() {
-  
-  
+
     const token = localStorage.getItem("jwt");
   
     if (token) {
@@ -134,9 +125,6 @@ function App(props) {
         });
       })
 }
-
-  console.log(loggedIn)
-
 
   const handleLogin = (data) => {
     const {email, password} = data;
@@ -240,25 +228,6 @@ function App(props) {
       }
 
 
-    function handleSaveMovie(movieData) {
-    
-      api
-        .postSavedMovies(movieData)
-        .then((newMovie) => {
-          setSavedMovies([newMovie.data, ...savedMovies]);
-          // props.setIsLiked(true)
-          // setLiked(true)
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-      
-    }
-
-
-
-
-  
     if (!permissionsCheck){
       return null;
     }
@@ -275,19 +244,16 @@ function App(props) {
 
 
    
-    <ProtectedRoute path="/movies" loggedIn={loggedIn} component= { Movies } movies={movies} onSubmit={searchMovie}  isLoading={isLoading} 
+    <ProtectedRoute path="/movies" loggedIn={loggedIn} component= { Movies } movies={movies} 
+    onSubmit={searchMovie}  
+    isLoading={isLoading} 
     message={message}  windowWidth={windowWidth} 
-        handleSaveMovie={handleSaveMovie}
-        savedMovies={savedMovies}
-
-        // handleSaveMovie={props.handleSaveMovie}
-
-              />
+    savedMovies={savedMovies}
+    />
 
     <ProtectedRoute path="/saved-movies" loggedIn={loggedIn} component= { SavedMovies } 
     savedMovies={savedMovies}  setSavedMovies={setSavedMovies} message={message} 
     windowWidth={windowWidth}
-    // handleDeleteMovie={props.handleDeleteMovie}
     setMyFilms={props.setMyFilms} myFilms={props.myFilms}
     onSubmit={searchSavedMovie}
     

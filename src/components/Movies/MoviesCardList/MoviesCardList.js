@@ -27,9 +27,6 @@ function handleMoreBtnClick() {
    setSearchedMovies(searchedMovies+moreMoviesCards)
 }
          
-
-        
-
     return(
     <>
      <div className="nothing-found__container"><span className="nothing-found">{props.message}</span></div>
@@ -37,7 +34,8 @@ function handleMoreBtnClick() {
             {props.movies
              .slice(0, searchedMovies)
             .map((movie)=> (
-                <MoviesCard key={movie.id} cardData={movie} onCardLike={props.onCardLike} savedMovies={props.savedMovies} handleSaveMovie={props.handleSaveMovie}
+                <MoviesCard key={movie.id} cardData={movie} onCardLike={props.onCardLike} savedMovies={props.savedMovies}
+                handleSaveMovie={props.handleSaveMovie}
                 setMyFilms={props.setMyFilms} myFilms={props.myFilms} 
                 liked={props.liked} setLiked={props.setLiked}
                 handleDeleteMovie={props.handleDeleteMovie}
