@@ -27,18 +27,28 @@ function MoviesCard(props) {
 
     
     function handleDeleteMovie() {
+       
         api
           .deleteMovie(cardData._id)
           .then(() => { 
             console.log(cardData._id)
             props.setMyFilms(!props.myFilms)
             props.setIsLiked(false)
+
+            const newCards = cardData.filter((c) =>  {
+                return (c._id !== cardData._id) });
+                // Обновляем стейт
+                props.setSavedMovies(newCards);
           })
           .catch((err) => {
             console.log(err);
           });
       }
 
+     
+    
+
+     
     return(
         <li className="movie movie_saved">
               <a href={cardData.trailer} className='movie__trailer' target='blank'>

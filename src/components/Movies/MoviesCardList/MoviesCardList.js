@@ -40,6 +40,7 @@ function handleMoreBtnClick() {
                 <MoviesCard key={movie.id} cardData={movie} onCardLike={props.onCardLike} savedMovies={props.savedMovies} handleSaveMovie={props.handleSaveMovie}
                 setMyFilms={props.setMyFilms} myFilms={props.myFilms} 
                 liked={props.liked} setLiked={props.setLiked}
+                handleDeleteMovie={props.handleDeleteMovie}
                 />
                )
                )}

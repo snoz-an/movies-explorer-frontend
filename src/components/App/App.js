@@ -278,10 +278,14 @@ function App(props) {
     <ProtectedRoute path="/movies" loggedIn={loggedIn} component= { Movies } movies={movies} onSubmit={searchMovie}  isLoading={isLoading} 
     message={message}  windowWidth={windowWidth} 
         handleSaveMovie={handleSaveMovie}
+        savedMovies={savedMovies}
+
+        // handleSaveMovie={props.handleSaveMovie}
+
               />
 
     <ProtectedRoute path="/saved-movies" loggedIn={loggedIn} component= { SavedMovies } 
-    savedMovies={savedMovies}  message={message} 
+    savedMovies={savedMovies}  setSavedMovies={setSavedMovies} message={message} 
     windowWidth={windowWidth}
     // handleDeleteMovie={props.handleDeleteMovie}
     setMyFilms={props.setMyFilms} myFilms={props.myFilms}

@@ -36,6 +36,7 @@ function SavedMovies(props) {
                 message={props.message} windowWidth={props.windowWidth}
                 setMyFilms={setMyFilms} myFilms={myFilms}
                 handleDeleteMovie={props.handleDeleteMovie}
+                setSavedMovies={props.setSavedMovies}
                 />
                 <div className="movies__button-more-container">
                     <button type="button" className="movies__button-more_none">Ещё</button>

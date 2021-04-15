@@ -8,7 +8,9 @@ function MoviesCardList(props){
                return  <MoviesCard 
                 key={props.savedMovies._id} 
 
-               cardData={savedMovie} {...savedMovie} setMyFilms={props.setMyFilms} myFilms={props.myFilms} handleDeleteMovie={props.handleDeleteMovie}/>
+               cardData={savedMovie} {...savedMovie} setMyFilms={props.setMyFilms} myFilms={props.myFilms} handleDeleteMovie={props.handleDeleteMovie}
+               setSavedMovies={props.setSavedMovies}
+               />
             })}
         </ul>
         </>

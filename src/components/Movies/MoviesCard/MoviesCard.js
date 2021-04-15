@@ -9,9 +9,31 @@ function MoviesCard(props) {
 
   const cardData = props.cardData;
   const handleSaveMovie = props.handleSaveMovie
+
+  const setLikes = React.useCallback(() => {
+    const likesCard = props.savedMovies.find((movie) => movie.movieId === cardData.id);
+    if (likesCard) {
+      setIsCardLikeClicked(true);
+    } else {
+      setIsCardLikeClicked(false);
+    }
+  }, [cardData.id, props.savedMovies]);
+
+  React.useEffect(() => {
+    setLikes();
+  }, [setLikes]);
+
+
+
+// function handleDeleteMovie() {
+//     setIsCardLikeClicked(false)
+//     api
+//     .deleteMovie(cardData._id)
+// }
+
     
-    function handleLikeClick(evt) {
-        evt.stopPropagation();
+    function handleLikeClick() {
+       
         if (!isCardLikeClicked) {
             handleSaveMovie({
             country: cardData.country || "default",
@@ -32,17 +54,18 @@ function MoviesCard(props) {
               : "https://www.youtube.com",
             owner: cardData.owner,
           })
+          setIsCardLikeClicked(true)
         }
           else {
             const savedCard = props.savedMovies.find((movie) => movie.movieId === cardData.id);
-            props.handleDeleteSavedMovie(savedCard);
+            // props.handleDeleteMovie(savedCard);
             setIsCardLikeClicked(false);
                 api
-                  .deleteMovie(cardData._id)
+                  .deleteMovie(savedCard._id)
                   .then(() => { 
-                    console.log(cardData._id)
-                    props.setMyFilms(!props.myFilms)
-                    props.setIsLiked(false)
+                    console.log(savedCard._id)
+                    // props.setMyFilms(!props.myFilms)
+                    // props.setIsLiked(false)
                   })
                   .catch((err) => {
                     console.log(err);
@@ -51,11 +74,6 @@ function MoviesCard(props) {
         
         
     }
-
-
-
-
-        
 
     
     return(
@@ -70,7 +88,8 @@ function MoviesCard(props) {
             <div className="movie__name-container">
                 <h3 className="movie__name">{cardData.nameRU}</h3>
                 <button type="button" className="like" >
-                    <img src={isCardLikeClicked ? Like: disLike}  className="like__img" alt="лайк" onClick={handleLikeClick} handleSaveMovie={props.handleSaveMovie}/>
+                    <img src={isCardLikeClicked ? Like: disLike}  className="like__img" alt="лайк" onClick={handleLikeClick} handleSaveMovie={props.handleSaveMovie} 
+                    handleDeleteMovie={props.handleDeleteMovie}/>
 
                     {/* <img src={ !isSaved ? evt => saveMovie(evt) : evt => deleteMovie(evt)}  className="like__img" alt="лайк" onClick={handleLikeClick}/> */}
 
